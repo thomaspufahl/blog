@@ -1,7 +1,14 @@
 ---
 const today = new Date();
+import { Icon } from 'astro-icon';
 ---
 
 <footer class="my-footer">
-      Copyright &copy; {today.getFullYear()} Thomas Pufahl | All rights reserved.
+      <small>Copyright &copy; {today.getFullYear()} Thomas Pufahl | All rights reserved.</small>
+      <small>
+            <a href="/rss.xml">
+                  Go to RSS
+                  <Icon name="tabler:rss" width="20" height="20" class="inline"/>
+            </a>
+      </small>
 </footer>

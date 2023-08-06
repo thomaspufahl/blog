@@ -119,7 +119,7 @@
 
 	.my-footer
 	{
-		@apply text-center p-8 pb-4 text-my-light mt-auto text-base;
+		@apply flex place-content-between text-my-light text-opacity-60 items-center py-8 pb-4 text-xl mt-8;
 	}
 
 	.my-nav
