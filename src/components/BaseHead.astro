@@ -1,0 +1,71 @@
+---
+import smartypants from "smartypants";
+import siteInfo from "~/data/site-info";
+import "~/styles/fonts.css";
+import Favicon from "./Favicon.astro";
+import SEO from "./SEO.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: { src: string; alt: string };
+  canonicalURL?: URL | null;
+  pageType?: "website" | "article";
+}
+
+const {
+  description = siteInfo.description,
+  image = siteInfo.image,
+  canonicalURL = new URL(Astro.request.url, Astro.site),
+  pageType = "website",
+} = Astro.props as Props;
+
+const title = [Astro.props.title, siteInfo.name].filter(Boolean).join(" | ");
+
+const resolvedImage = {
+  src: new URL(image.src, Astro.site).toString(),
+  alt: image.alt,
+};
+---
+<!-- Google Adsense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4383151523721878"
+     crossorigin="anonymous"></script>
+<!-- High Priority Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title set:html={smartypants(title, 1)} />
+<meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#8D46E7" />
+
+<!-- Font preloads -->
+<link
+  rel="preload"
+  href="/fonts/atkinson-regular.woff"
+  as="font"
+  type="font/woff"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/fonts/atkinson-bold.woff"
+  as="font"
+  type="font/woff"
+  crossorigin
+/>
+
+<!-- image preloads -->
+
+<!-- Low Priority Global Metadata -->
+<Favicon />
+<!--<link rel="mask-icon" href="/favicon.svg" color="#8D46E7" />-->
+<!--<link rel="sitemap" href="/sitemap-index.xml" />-->
+<!--<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" />-->
+
+<SEO
+  name={siteInfo.name}
+  title={title}
+  description={description}
+  image={resolvedImage}
+  og={{ type: pageType }}
+  canonicalURL={canonicalURL}
+/>

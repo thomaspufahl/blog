@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+	/*
+	CLASE H1
+	es una clase que tiene el formato de un h1, entonces podria tener una etiqueta h2, que semanticamente esta bien
+	pero su estilo no es el de un h2, sino el de un h1
+	*/
+
+
+	hr
+    {
+        border: none;
+        border-top: 1px solid rgb(133, 148, 190, 35%);
+        @apply my-14 w-full;
+    }
+
+	h6,
+	h5,
+	h4,
+	h3,
+	h2,
+	h1 {
+		@apply text-my-dark font-bold;
+	}
+
+	h1 {
+		@apply text-4xl;
+	}
+	h2 {
+		@apply text-3xl;
+	}
+	h3 {
+		@apply text-2xl;
+	}
+	h4 {
+		@apply text-xl;
+	}
+	h5 {
+		@apply text-lg;
+	}
+	h6 {
+		@apply text-base;
+	}
+
+	code {
+		padding: 2px 5px;
+		/*background-color: rgb(var(--gray-light));*/
+		border-radius: 2px;
+		@apply w-full
+	}
+
+	pre {
+		padding: 1.5em;
+		border-radius: 8px;
+		@apply w-full
+	}
+
+	pre > code {
+		all: unset;
+		@apply w-full
+	}
+
+	blockquote {
+		/*border-left: 4px solid var(--accent);*/
+		padding: 0 0 0 20px;
+		margin: 0;
+		font-size: 1.333em;
+	}
+
+	blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+		margin: revert;
+	}
+
+	ol, ul, menu {
+		list-style: revert;
+		padding: revert;
+	}
+
+	img {
+		@apply w-full h-auto rounded-lg;
+	}
+
+	.my-hover-scale
+	{
+		@apply hover:scale-125 transition-transform duration-300 ease-in-out
+	}
+
+	.my-body {
+		font-family: "Atkinson", sans-serif;
+		@apply m-0 p-0 text-left text-xl bg-my-white;
+	}
+
+	.my-content
+	{
+		/* footer to the bottom */
+		@apply flex flex-col min-h-screen;
+
+		@apply mx-auto max-w-4xl flex flex-col gap-4
+	}
+
+	.my-header
+	{
+		@apply py-8;
+	}
+
+	.my-header h2
+	{
+		@apply m-0 p-0 font-mono;
+	}
+
+	.my-main
+	{
+		@apply flex flex-col grow justify-center items-center m-auto;
+	}
+
+	.my-footer
+	{
+		@apply text-center p-8 pb-4 text-my-light mt-auto text-base;
+	}
+
+	.my-nav
+	{
+		@apply flex place-content-between;
+	}
+
+	.my-not-found
+	{
+		@apply flex flex-col items-center justify-center gap-1 text-center
+	}
+
+	.my-post
+	{
+
+	}
+
+	.my-post-header
+	{
+		@apply flex flex-col text-center;
+	}
+
+	.my-post-header > img
+	{
+		@apply w-full h-auto rounded-lg;
+	}
+
+	.my-post-header > span
+	{
+		@apply text-my-light text-xl pt-2;
+	}
+
+	.my-post-content
+	{
+		@apply flex flex-wrap items-center text-left m-0;
+	}
+
+	/*.my-post-content > p*/
+	/*{*/
+	/*	@apply ml-4*/
+	/*}*/
+
+	.my-post-content > ul, ol
+	{
+		@apply flex flex-wrap gap-8;
+	}
+
+	.my-post-content > ol > li
+	{
+		@apply w-full mx-5;
+	}
+
+	.my-post-content > ul > li
+	{
+		@apply w-full mx-5;
+	}
+
+	.my-post-content > ol > li > img
+	{
+		@apply rounded-lg w-full h-auto mt-4;
+	}
+
+	.my-post-content > ul > li > img
+	{
+		@apply rounded-lg w-full h-auto mt-4;
+	}
+
+	.my-posts {
+		@apply mt-16
+	}
+	.my-posts > ul {
+		@apply p-0 list-none flex flex-wrap justify-center gap-14
+	}
+
+	.my-post-card {
+		@apply w-5/12
+	}
+}

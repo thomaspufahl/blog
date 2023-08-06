@@ -1,0 +1,31 @@
+---
+import { CollectionEntry } from "astro:content";
+
+import MainLayout from "./MainLayout.astro";
+import PostFooter from "~/components/PostFooter.astro";
+import PostHeader from "~/components/PostHeader.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+const {
+    id,
+    recommended,
+    author,
+    date,
+    lastmod,
+    title,
+    description,
+    image,
+    draft
+} = Astro.props
+---
+
+<MainLayout {title} {description} {image}>
+    <article class="my-post">
+        <PostHeader {image} {title} {date}/>
+        <hr/>
+        <section class="my-post-content">
+            <slot/>
+        </section>
+        <PostFooter {author} {lastmod} />
+    </article>
+</MainLayout>

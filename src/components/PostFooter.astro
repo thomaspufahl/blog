@@ -1,0 +1,18 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+
+const {
+    author,
+    lastmod
+} = Astro.props
+
+---
+
+
+<footer class="my-post-footer">
+    <hr/>
+    <p class="text-gray text-base">
+        Escrito por <strong>{author}</strong>.
+        Última actualización <span><FormattedDate date={lastmod}/></span>
+    </p>
+</footer>

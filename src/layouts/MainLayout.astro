@@ -1,0 +1,28 @@
+---
+import BaseHead from "~/components/BaseHead.astro";
+import HeadProps from "~/components/BaseHead.astro";
+import "~/styles/tailwind.css"
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+export type Props = HeadProps;
+
+const { ...head } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+        <BaseHead { ...head } />
+	</head>
+	<body class="my-body">
+		<div class="my-content">
+			<Header />
+			<main class="my-main">
+				<slot />
+			</main>
+			<Footer />
+		</div>
+	</body>
+</html>

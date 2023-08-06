@@ -1,0 +1,20 @@
+---
+import siteInfo from "~/data/site-info";
+import { Icon } from "astro-icon";
+import PageName from "./PageName.astro";
+import BackHome from "./BackHome.astro";
+---
+
+<header class="my-header">
+  <nav class="my-nav">
+    <div class="flex space-x-6">
+      <BackHome/>
+      <PageName/>
+    </div>
+    <div>
+      <a href={siteInfo.socialLinks[0].href} target="_blank">
+        <Icon name={siteInfo.socialLinks[0].icon} width="32" class="my-hover-scale"/>
+      </a>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,33 @@
+---
+import FormattedDate from "./FormattedDate.astro"
+import {Image} from "@astrojs/image/components";
+
+const POSTS = await Astro.glob("./../content/blog/*.md")
+
+import { findRecommendedPost } from "~/js/utils";
+
+const RECOMMENDED_POST = findRecommendedPost(POSTS)
+
+const { url } = RECOMMENDED_POST
+const { id, image, title, date } = RECOMMENDED_POST.frontmatter
+
+---
+<section class="flex justify-center">
+    <a href={`/${id}/`}>
+        <Image
+            src={image.src}
+            alt={image.alt}
+            width="1080"
+            height=""
+            format="avif"
+            fit="cover"
+            quality={80}
+            aspectRatio="16:9"
+            class="mb-4 rounded-lg w-full my-hover-scale"
+        />
+        <h4 class="text-black leading-none">{title}</h4>
+        <p class="text-gray text-base">
+            <FormattedDate date={date} />
+        </p>
+    </a>
+</section>

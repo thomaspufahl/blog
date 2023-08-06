@@ -1,0 +1,27 @@
+---
+
+import FormattedDate from "./FormattedDate.astro";
+import {Image} from "@astrojs/image/components";
+
+const {
+    image,
+    title,
+    date
+} = Astro.props
+
+---
+<header class="my-post-header">
+    <Image
+            src={image.src}
+            alt={image.alt}
+            width="1080"
+            height=""
+            format="avif"
+            fit="cover"
+            quality={80}
+            aspectRatio="16:9"
+    />
+    <!--<img src={image.src} alt={image.alt} />-->
+    <span><FormattedDate {date}/></span>
+    <h2> {title} </h2>
+</header>

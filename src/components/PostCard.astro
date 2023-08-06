@@ -1,0 +1,27 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+import {Image} from "@astrojs/image/components";
+
+const { post } = Astro.props
+const { url } = post
+const { id, title, date, author, image } = post.frontmatter
+---
+<li class="my-post-card">
+    <a href=`/${id}/`>
+        <Image
+            src={image.src}
+            alt={image.alt}
+            width="1080"
+            height=""
+            format="avif"
+            fit="cover"
+            quality={80}
+            aspectRatio="16:9"
+            class="mb-4 rounded-lg w-full my-hover-scale"
+        />
+        <h4 class="mb-2 text-my-dark leading-none hover:underline" >{title}</h4>
+    </a>
+    <p class="text-my-light text-base">
+        <FormattedDate {date} />
+    </p>
+</li>
