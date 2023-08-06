@@ -1,7 +1,6 @@
 export function findRecommendedPost(posts) {
     // I have only one recommended post, so i find it and return it
     // If dont have a recommended post, i will return a random post
-    const rp = posts
     const recommendedPost = posts.find(post => post.frontmatter.recommended)
 
     if (recommendedPost) return recommendedPost
