@@ -4,7 +4,7 @@ recommended: true
 author: Thomas Pufahl
 date: 2023-08-05
 lastmod: 2023-08-05
-title: 'CodeBlocks: Cómo establecer código por defecto en nuevos archivos'
+title: 'CodeBlocks: código por defecto en nuevos archivos'
 description: 'En CodeBlocks 20.03, es posible configurar un código por defecto que se incluirá automáticamente al crear un nuevo archivo. Esto puede ser útil cuando trabajamos con plantillas o queremos tener un esqueleto inicial para nuestros proyectos. En este artículo, aprenderemos cómo hacerlo paso a paso.'
 image: {
     src: "/images/thumbnail/3-instalar-docker.jpg",

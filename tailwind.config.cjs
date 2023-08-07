@@ -2,11 +2,6 @@
 module.exports = {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
-		screens: {
-			'mobile': '428px',
-			'popular': '1366px',
-			'large': '1920px',
-		},
 		colors: {
 			'my-dark': '#191728',
 			'my-accent-dark': '#382F67',
@@ -19,7 +14,13 @@ module.exports = {
 			'rgb-light': 'rgb(133, 148, 190)',
 			'rgb-white': 'rgb(235, 237, 241)',
 		},
-		extend: {},
+		extend: {
+			screens: {
+				'mobile': '428px',
+				'popular': '1366px',
+				'large': '1920px',
+			},
+		},
 	},
 	plugins: [],
 }

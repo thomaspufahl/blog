@@ -15,7 +15,7 @@
     {
         border: none;
         border-top: 1px solid rgb(133, 148, 190, 35%);
-        @apply my-14 w-full;
+        @apply w-full;
     }
 
 	h6,
@@ -81,12 +81,18 @@
 	}
 
 	img {
+		@apply drop-shadow;
 		@apply w-full h-auto rounded-lg;
 	}
 
 	.my-hover-scale
 	{
-		@apply hover:scale-125 transition-transform duration-300 ease-in-out
+		@apply hover:scale-110 transition-transform duration-300 ease-in-out
+	}
+
+	.my-hover-recommended
+	{
+		@apply hover:scale-[1.009] transition-transform duration-300 ease-in-out
 	}
 
 	.my-body {
@@ -99,38 +105,89 @@
 		/* footer to the bottom */
 		@apply flex flex-col min-h-screen;
 
-		@apply mx-auto max-w-4xl flex flex-col gap-4
+
+		@apply mx-auto max-w-xs flex flex-col gap-4;
+
+		@apply popular:max-w-2xl;
+
+		@apply large:max-w-4xl;
 	}
 
 	.my-header
 	{
-		@apply py-8;
+		/*  mobile */
+		/*@apply py-8 px-8;*/
+		@apply pt-8 pb-0;
 	}
 
 	.my-header h2
 	{
 		@apply m-0 p-0 font-mono;
-	}
 
-	.my-main
-	{
-		@apply flex flex-col grow justify-center items-center m-auto;
-	}
+		@apply text-right text-2xl;
 
-	.my-footer
-	{
-		@apply flex place-content-between text-my-light text-opacity-60 items-center py-8 pb-4 text-xl mt-8;
+		@apply popular:text-3xl popular:text-right;
 	}
 
 	.my-nav
 	{
-		@apply flex place-content-between;
+		/*  mobile */
+		@apply flex flex-row-reverse gap-8;
+
+		/*  desktop */
+		@apply popular:flex-row popular:place-content-between;
+	}
+
+	.my-nav-buttons
+	{
+		@apply flex flex-row place-content-between items-center;
+
+		@apply popular:gap-14;
+	}
+
+
+	.my-main
+	{
+		@apply flex flex-col grow justify-center items-center m-auto gap-4;
+	}
+
+	.my-footer
+	{
+		@apply flex place-content-between text-my-light text-opacity-60 items-center py-8 pb-4 text-sm mt-8;
+
+		@apply popular:text-xl
 	}
 
 	.my-not-found
 	{
 		@apply flex flex-col items-center justify-center gap-1 text-center
 	}
+
+	.my-recommended-post
+	{
+		@apply flex flex-col justify-center
+	}
+
+	.my-posts {
+		/*@apply mt-4;*/
+		/*@apply popular:mt-10;*/
+	}
+
+	.my-posts > ul {
+
+		/*@apply p-0 list-none flex flex-wrap place-content-between gap-y-8;*/
+		@apply p-0 list-none flex flex-col gap-8 items-center;
+
+		@apply popular:flex-row popular:flex-wrap popular:place-content-evenly;
+	}
+
+	.my-post-item {
+
+		@apply flex flex-col place-content-between;
+
+		@apply popular:w-5/12;
+	}
+
 
 	.my-post
 	{
@@ -187,14 +244,4 @@
 		@apply rounded-lg w-full h-auto mt-4;
 	}
 
-	.my-posts {
-		@apply mt-16
-	}
-	.my-posts > ul {
-		@apply p-0 list-none flex flex-wrap justify-center gap-14
-	}
-
-	.my-post-card {
-		@apply w-5/12
-	}
 }

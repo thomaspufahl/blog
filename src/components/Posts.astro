@@ -10,7 +10,11 @@ const FORMMATED_POSTS = formatBlogPosts(POSTS)
 <section class="my-posts">
     <ul>
         {
-            FORMMATED_POSTS.map((post) => <PostCard { post } />)
+            FORMMATED_POSTS.map((post) =>
+                <li class="my-post-item">
+                    <PostCard { post } />
+                </li>
+            )
         }
     </ul>
 </section>

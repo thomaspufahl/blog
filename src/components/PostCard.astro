@@ -5,22 +5,41 @@ import {Image} from "@astrojs/image/components";
 const { post } = Astro.props
 const { url } = post
 const { id, title, date, author, image } = post.frontmatter
+
+const { isRecommended } = Astro.props
+
 ---
-<li class="my-post-card">
-    <a href=`/${id}/`>
-        <Image
-            src={image.src}
-            alt={image.alt}
-            width="1080"
-            height=""
-            fit="cover"
-            quality={80}
-            aspectRatio="16:9"
-            class="mb-4 rounded-lg w-full my-hover-scale"
-        />
-        <h4 class="mb-2 text-my-dark leading-none hover:underline" >{title}</h4>
-    </a>
-    <p class="text-my-light text-base">
-        <FormattedDate {date} />
-    </p>
-</li>
+
+<a href=`/${id}/`>
+    {
+        isRecommended &&
+        <span class="text-my-dark text-sm font-bold uppercase tracking-widest">Recomendado</span>
+    }
+    <Image
+        src={image.src}
+        alt={image.alt}
+        width="1080"
+        height=""
+        fit="cover"
+        quality={80}
+        aspectRatio="16:9"
+        class =
+        {
+            isRecommended
+            ? "my-hover-recommended rounded-none rounded-t-lg"
+            : "my-hover-scale"
+        }
+    />
+    <h4 class=
+        {
+            isRecommended
+            ? "mb-2 mt-0 text-my-white leading-none hover:underline bg-my-accent-dark p-2 rounded-b-lg"
+            : "mb-2 mt-4 text-my-dark leading-none hover:underline"
+        }
+    >
+        {title}
+    </h4>
+</a>
+<p class="text-my-light text-base my-0">
+    <FormattedDate {date} />
+</p>

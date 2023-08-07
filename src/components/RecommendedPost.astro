@@ -5,28 +5,12 @@ import {Image} from "@astrojs/image/components";
 const POSTS = await Astro.glob("./../content/blog/*.md")
 
 import { findRecommendedPost } from "~/js/utils";
+import PostCard from "./PostCard.astro";
 
-const RECOMMENDED_POST = findRecommendedPost(POSTS)
+const post = findRecommendedPost(POSTS)
 
-const { url } = RECOMMENDED_POST
-const { id, image, title, date } = RECOMMENDED_POST.frontmatter
-
+const isRecommended = true
 ---
-<section class="flex justify-center">
-    <a href={`/${id}/`}>
-        <Image
-            src={image.src}
-            alt={image.alt}
-            width="1080"
-            height=""
-            fit="cover"
-            quality={80}
-            aspectRatio="16:9"
-            class="mb-4 rounded-lg w-full my-hover-scale"
-        />
-        <h4 class="text-black leading-none">{title}</h4>
-        <p class="text-gray text-base">
-            <FormattedDate date={date} />
-        </p>
-    </a>
+<section class="my-recommended-post">
+    <PostCard {post} {isRecommended}/>
 </section>
