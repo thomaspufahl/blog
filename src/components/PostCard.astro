@@ -15,30 +15,32 @@ const { isRecommended } = Astro.props
         isRecommended &&
         <span class="text-my-dark text-sm font-bold uppercase tracking-widest">Recomendado</span>
     }
-    <Image
-        src={image.src}
-        alt={image.alt}
-        width="1080"
-        height=""
-        fit="cover"
-        quality={80}
-        aspectRatio="16:9"
-        class =
-        {
-            isRecommended
-            ? "my-hover-recommended rounded-none rounded-t-lg"
-            : "my-hover-scale"
-        }
-    />
-    <h4 class=
-        {
-            isRecommended
-            ? "mb-2 mt-0 text-my-white leading-none hover:underline bg-my-accent-dark p-2 rounded-b-lg"
-            : "mb-2 mt-4 text-my-dark leading-none hover:underline"
-        }
-    >
-        {title}
-    </h4>
+    <div class={ isRecommended && "my-recommended-hover"}>
+        <Image
+            src={image.src}
+            alt={image.alt}
+            width="1080"
+            height=""
+            fit="cover"
+            quality={80}
+            aspectRatio="16:9"
+            class =
+            {
+                !isRecommended
+                ? "my-hover-scale mb-2"
+                : "rounded-none rounded-t-lg"
+            }
+        />
+        <h4 class=
+            {
+                isRecommended
+                ? "my-recommended-title"
+                : "my-title"
+            }
+        >
+            {title}
+        </h4>
+    </div>
 </a>
 <p class="text-my-light text-base my-0">
     <FormattedDate {date} />

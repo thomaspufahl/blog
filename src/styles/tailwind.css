@@ -90,9 +90,19 @@
 		@apply hover:scale-110 transition-transform duration-300 ease-in-out
 	}
 
-	.my-hover-recommended
+	.my-recommended-hover
 	{
 		@apply hover:scale-[1.009] transition-transform duration-300 ease-in-out
+	}
+
+	.my-recommended-title
+	{
+		@apply mb-2 mt-0 text-my-white leading-none hover:underline bg-my-accent-dark p-2 rounded-b-lg
+	}
+
+	.my-title
+	{
+		@apply mb-2 mt-4 text-my-dark leading-none hover:underline
 	}
 
 	.my-body {
