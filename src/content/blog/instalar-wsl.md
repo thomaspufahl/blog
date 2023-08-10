@@ -4,7 +4,7 @@ recommended: false
 author: Thomas Pufahl
 date: 2023-08-10
 lastmod: 2023-08-10
-title: "LINUX EN WINDOWS: Cómo instalar WSL paso a paso."
+title: "LINUX: Cómo instalar WSL 2 en Windows paso a paso."
 description: "WSL es una característica de Windows que permite ejecutar distribuciones de Linux en Windows. WSL 2 es la versión más reciente de WSL y ofrece un mejor rendimiento y compatibilidad con las aplicaciones de Linux. En este artículo, te mostraremos cómo instalar WSL 2 en Windows 10/11."
 image: {
     src: "/images/thumbnail/3-instalar-docker.jpg",
