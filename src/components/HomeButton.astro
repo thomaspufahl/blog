@@ -1,0 +1,13 @@
+---
+import {Icon} from "astro-icon";
+
+const location = Astro.url.pathname
+---
+<a href="/" class="my-hover-scale">
+    <Icon width="32"
+            name=
+            {
+                (location === "/") ? "logo" : "entypo:back"
+            }
+    />
+</a>

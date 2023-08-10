@@ -4,12 +4,10 @@
 
 @layer components {
 
-	/*
-	CLASE H1
-	es una clase que tiene el formato de un h1, entonces podria tener una etiqueta h2, que semanticamente esta bien
-	pero su estilo no es el de un h2, sino el de un h1
-	*/
-
+	time
+	{
+		@apply text-my-light text-base my-0
+	}
 
 	hr
     {
@@ -25,6 +23,14 @@
 	h2,
 	h1 {
 		@apply text-my-dark font-bold;
+	}
+
+	.h1 {
+		@apply text-4xl
+	}
+
+	.h2 {
+		@apply text-3xl
 	}
 
 	h1 {
@@ -112,47 +118,41 @@
 
 	.my-content
 	{
-		/* footer to the bottom */
 		@apply flex flex-col min-h-screen;
-
 
 		@apply mx-auto max-w-xs flex flex-col gap-4;
 
-		@apply popular:max-w-2xl;
+		@apply sm:max-w-xl;
+
+		@apply md:max-w-2xl;
 
 		@apply large:max-w-4xl;
 	}
 
 	.my-header
 	{
-		/*  mobile */
-		/*@apply py-8 px-8;*/
 		@apply pt-8 pb-0;
 	}
 
-	.my-header h2
+	.my-page-name
 	{
 		@apply m-0 p-0 font-mono;
 
 		@apply text-right text-2xl;
 
-		@apply popular:text-3xl popular:text-right;
+		@apply popular:text-3xl;
 	}
 
 	.my-nav
 	{
-		/*  mobile */
 		@apply flex flex-row-reverse gap-8;
 
-		/*  desktop */
-		@apply popular:flex-row popular:place-content-between;
+		@apply sm:flex-row sm:place-content-between;
 	}
 
 	.my-nav-buttons
 	{
 		@apply flex flex-row place-content-between items-center;
-
-		@apply popular:gap-14;
 	}
 
 
@@ -165,7 +165,7 @@
 	{
 		@apply flex place-content-between text-my-light text-opacity-60 items-center py-8 pb-4 text-sm mt-8;
 
-		@apply popular:text-xl
+		@apply sm:text-xl
 	}
 
 	.my-not-found
@@ -179,23 +179,21 @@
 	}
 
 	.my-posts {
-		/*@apply mt-4;*/
-		/*@apply popular:mt-10;*/
+
 	}
 
 	.my-posts > ul {
 
-		/*@apply p-0 list-none flex flex-wrap place-content-between gap-y-8;*/
 		@apply p-0 list-none flex flex-col gap-8 items-center;
 
-		@apply popular:flex-row popular:flex-wrap popular:place-content-evenly;
+		@apply md:flex-row md:flex-wrap md:place-content-evenly;
 	}
 
 	.my-post-item {
 
 		@apply flex flex-col place-content-between;
 
-		@apply popular:w-5/12;
+		@apply md:w-5/12;
 	}
 
 
@@ -209,25 +207,10 @@
 		@apply flex flex-col text-center;
 	}
 
-	.my-post-header > img
-	{
-		@apply w-full h-auto rounded-lg;
-	}
-
-	.my-post-header > span
-	{
-		@apply text-my-light text-xl pt-2;
-	}
-
 	.my-post-content
 	{
 		@apply flex flex-wrap items-center text-left m-0;
 	}
-
-	/*.my-post-content > p*/
-	/*{*/
-	/*	@apply ml-4*/
-	/*}*/
 
 	.my-post-content > ul, ol
 	{
